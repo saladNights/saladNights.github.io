@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgatsby_starter_default=self.webpackChunkgatsby_starter_default||[]).push([[841],{6335:function(e,t,a){a.r(t);var l=a(7294);t.default=()=>l.createElement("div",null,l.createElement("h2",null,"Summerside"))}}]);
+//# sourceMappingURL=component---src-pages-summerside-index-en-js-04ff28f245162889853d.js.map
