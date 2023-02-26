@@ -3,7 +3,6 @@ import { Link as GatsbyLink } from 'gatsby'
 import { Link, animateScroll as scroll } from "react-scroll"
 import { CSSTransition } from 'react-transition-group'
 import { Sticky } from 'semantic-ui-react'
-import Sticker from 'react-stickyfill'
 import VisibilitySensor from 'react-visibility-sensor'
 import {
   FacebookShareButton,
@@ -483,14 +482,12 @@ class SummersidePage extends React.PureComponent {
                 </ul>
               </div>
             </section>
-            <Sticker>
-              <div className={classes.map}>
-                <RouteMap
-                  width={this.state.containerTopWidth}
-                  height={this.state.containerTopHeight}
-                />
-              </div>
-            </Sticker>
+            <div className={classes.map}>
+              <RouteMap
+                width={this.state.containerTopWidth}
+                height={this.state.containerTopHeight}
+              />
+            </div>
           </div>
           <section id="intro" className={classes.intro}>
             <div className={classes.textContainer}>
