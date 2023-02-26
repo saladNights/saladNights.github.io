@@ -5,7 +5,7 @@ import Swiper from 'react-id-swiper'
 import photoSizes from "../../data/photo_sizes.json"
 
 import './swiper.css';
-import classes from './Gallery.module.scss';
+import * as classes from './Gallery.module.scss';
 
 class Gallery extends React.Component {
   state = {
@@ -42,13 +42,12 @@ class Gallery extends React.Component {
     let photoWithComments = [...photoSizes];
     let photoItem = null;
     let setCommentCounter = 0;
-    photoSizes.map((item, i) => {
+    photoSizes.forEach((item, i) => {
       photoItem = this.props.comments.find(comment => comment.id === item.id);
       if(photoItem !== undefined){
         photoWithComments.splice(i + setCommentCounter, 0, {comment: true, msg: photoItem.msg});
         setCommentCounter++;
       }
-      return null;
     });
     this.setState({
         photoSizes: photoWithComments
@@ -129,9 +128,9 @@ class Gallery extends React.Component {
               photoSizes.map((item) => (
                 <div key={item.id}>
                   <img
-                      className={['swiper-item swiper-lazy', classes.swiperItem].join(' ')}
-                      data-src={item.large}
-                      alt={item.id}
+                    alt={item.id}
+                    className={['swiper-item', 'swiper-lazy', classes.swiperItem].join(' ')}
+                    data-src={item.large}
                   />
                   <div className={['swiper-lazy-preloader', classes.swiperLazyPreloader].join(' ')}>
                     <div className={classes.loader}>

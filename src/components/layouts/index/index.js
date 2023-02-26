@@ -6,8 +6,8 @@ import { Icon, Menu } from 'semantic-ui-react'
 import { getCurrentLangKey, getUrlForLang, getLangs } from 'ptz-i18n'
 import 'semantic-ui-css/semantic.min.css'
 import '../../../styles/main.scss'
-import classes from './index.module.scss'
-import commonClasses from '../../../styles/elements.module.scss'
+import * as classes from './index.module.scss'
+import * as commonClasses from '../../../styles/elements.module.scss'
 
 const languages = require('../../../data/languages');
 

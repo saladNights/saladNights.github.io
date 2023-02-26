@@ -1,6 +1,7 @@
 @import "./colors.scss";
 
 .Link{
+  display: inline-block;
   color: $link !important;
   text-decoration: none !important;
   position: relative;

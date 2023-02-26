@@ -4,7 +4,7 @@ import { geoPath } from "d3-geo"
 import { mesh } from "topojson-client"
 import trackData1 from "../../data/track1"
 import trackData2 from "../../data/track2"
-import classes from "./index.module.scss"
+import * as classes from "./index.module.scss"
 
 const CITIES_DATA1 = [
   {

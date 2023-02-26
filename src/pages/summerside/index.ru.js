@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link as GatsbyLink} from 'gatsby'
+import { Link as GatsbyLink } from 'gatsby'
 import { Link, animateScroll as scroll } from "react-scroll"
 import { CSSTransition } from 'react-transition-group'
 import { Sticky } from 'semantic-ui-react'
@@ -21,7 +21,7 @@ import RouteMap from '../../components/RouteMap/index'
 import Gallery from '../../components/Gallery/index'
 import RouteScroller from '../../components/RouteScroller'
 
-import classes from './summerside.module.scss'
+import * as classes from './summerside.module.scss'
 
 import introImg from '../../assets/img/pages/summerside/intro.jpg'
 import shareImg from '../../assets/img/pages/summerside/share.png'

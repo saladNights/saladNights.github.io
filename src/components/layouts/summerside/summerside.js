@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import 'semantic-ui-css/semantic.min.css'
 import '../index/index.module.scss'
-import classes from './summersideLayout.module.scss'
+import * as classes from './summersideLayout.module.scss'
 import PropTypes from "prop-types"
 import { getCurrentLangKey } from "ptz-i18n";
 import shareImg from '../../../assets/img/pages/summerside/share.png'

@@ -10,7 +10,7 @@ import mapData from "../../data/route_map"
 import trackData1 from "../../data/track1"
 import trackData2 from "../../data/track2"
 
-import classes from './index.module.scss'
+import * as classes from './index.module.scss'
 
 class RouteMap extends React.Component {
 
