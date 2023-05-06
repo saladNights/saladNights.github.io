@@ -9,11 +9,3 @@
   Based on code that is Copyright 2013-2015, Facebook, Inc.
   All rights reserved.
 */
-
-/*!
- * Stickyfill -- `position: sticky` polyfill
- * v. 1.1.5 | https://github.com/wilddeer/stickyfill
- * Copyright Oleg Korsunsky | http://wd.dizaina.net/
- *
- * MIT License
- */
