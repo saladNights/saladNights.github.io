@@ -9,8 +9,11 @@ const IndexPage = ({location}) => (
     <h1 className={classes.title}>Andrei Tarasov</h1>
     <h2 className={classes.subTitle}>Frontend-developer</h2>
     <p>
-      I've worked in different fields of web development for 9 years.<br/>
-      Last 6 years my passions have been front-end development and the JavaScript ecosystem.
+      Hi, I'm Andrei Tarasov, a frontend developer with a passion for the JavaScript ecosystem and the React framework. I have experience building user interfaces for startups, government companies, and extensive enterprise businesses. <br/>
+      <br/>
+      I specialize in using React to build single-page applications (SPAs), and I have experience working with a variety of tools and technologies, including Redux, Typescript, and GraphQL. <br/>
+      <br/>
+      If you're interested in discussing a frontend project or just connecting with me, feel free to reach out!
     </p>
     <p>
       There is <a className={commonClasses.Link} rel="noopener noreferrer" target="_blank" href='https://docs.google.com/document/d/1bSdHMs7TLtpMZ18yZWrbEL9nMA8UrQdqwRym9ezrQuM/edit?usp=sharing'>my&nbsp;resume</a>
@@ -18,9 +21,6 @@ const IndexPage = ({location}) => (
     <h4 className={classes.heading}>My skills</h4>
     <p>
       HTML, CSS, JavaScript, TypeScript, React & a lot of libs.
-    </p>
-    <p>
-      Sometimes I close my code editor and go to take <a className={commonClasses.Link} rel="noopener noreferrer" target="_blank" href="https://500px.com/salad_nights">film photos</a>, make <a className={commonClasses.Link} rel="noopener noreferrer" target="_blank" href="https://www.mixcloud.com/andrey-ivanov19/">mixtapes</a> for my wife or go on weird journeys and then <a className={commonClasses.Link} rel="noopener noreferrer" target="_blank" href="https://journal.tinkoff.ru/work_exchange/">write&nbsp;about&nbsp;it.</a>
     </p>
   </Layout>
 );
