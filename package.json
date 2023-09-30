@@ -6,6 +6,7 @@
   "dependencies": {
     "d3": "^7.8.2",
     "d3-geo": "^3.1.0",
+    "dotenv": "^16.3.1",
     "gatsby": "^5.7.0",
     "gatsby-link": "^5.7.0",
     "gatsby-plugin-catch-links": "^5.7.0",
