@@ -42,16 +42,7 @@
     height: calc(100vh/6);
   }
 }
-.loader{
-  display: block;
-  width: 100%;
-  text-align: center;
-  margin: 1em;
-}
-.ldsCss{
-  width: 40px;
-  margin: 0 auto;
-}
+
 @keyframes lds-eclipse-transform {
   0% {
     -webkit-transform: rotate(0deg);
@@ -66,26 +57,7 @@
     transform: rotate(360deg);
   }
 }
-.ldsEclipse {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform: translate(-20px, -20px) scale(0.2) translate(20px, 20px);
 
-  div {
-    position: absolute;
-    -webkit-animation: lds-eclipse-transform 1s linear infinite;
-    animation: lds-eclipse-transform 1s linear infinite;
-    width: 160px;
-    height: 160px;
-    top: 20px;
-    left: 20px;
-    border-radius: 50%;
-    box-shadow: 0 8px 0 0 $mojo;
-    -webkit-transform-origin: 80px 84px;
-    transform-origin: 80px 84px;
-  }
-}
 .modal{
   display: none;
   position: fixed;
@@ -119,28 +91,22 @@
     }
   }
 }
+
 .swiperItem{
   max-height: 90vh;
   max-width: 90%;
 }
-.swiperLazyPreloader{
-  background: none;
-  animation: none;
-  position: absolute;
-  top: calc(50% - 20px);
-  left: calc(50% - 20px);
 
-  &:before, &:after{
-    display: none;
-  }
-}
 :global{
   .swiper-container{
     height: 100vh;
   }
+  .swiper {
+    height: 100% !important;
+  }
   .swiper-slide{
     text-align: center;
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -152,30 +118,6 @@
     display: block;
   }
   .swiper-button-next, .swiper-button-prev{
-    display: none;
-    background-image: none;
-    width: 40px;
-    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-    -webkit-tap-highlight-color: transparent;
-    outline: none !important;
-    @include  for-tablet-portrait-up {
-      display: block;
-    }
-
-    &:focus{
-      outline: none !important;
-    }
-    path{
-      fill: $mojo
-    }
-    &:hover, &:focus{
-      path{
-        fill: $white
-      }
-    }
-  }
-  .swiper-button-prev{
-    top: 52%;
-    transform: rotate(180deg);
+    color: $mojo !important;
   }
 }

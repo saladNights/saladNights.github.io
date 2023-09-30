@@ -1,47 +1,29 @@
 import React from 'react'
 
-import Swiper from 'react-id-swiper'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation } from 'swiper/modules'
 
 import photoSizes from "../../data/photo_sizes.json"
 
-import './swiper.css';
 import * as classes from './Gallery.module.scss';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 class Gallery extends React.Component {
   state = {
     pagePhotoCounter: 0,
     hasMore: true,
     photoSizes: [],
-    swiperParams: {
-      lazy: true,
-      shouldSwiperUpdate: true,
-      rebuildOnUpdate: true,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-      },
-      renderPrevButton: () => {
-        return (<div className='swiper-button-prev'>
-          <svg viewBox="16 11 17 25" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.17 32.92l9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"/>
-          </svg>
-        </div>)
-      },
-      renderNextButton: () => {
-        return (<div className='swiper-button-next'>
-          <svg viewBox="16 11 17 25" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.17 32.92l9.17-9.17-9.17-9.17 2.83-2.83 12 12-12 12z"/>
-          </svg>
-        </div>)
-      },
-    },
-    showModal: false
+    showModal: false,
+    swiperInstance: null,
   };
 
   componentDidMount(){
     let photoWithComments = [...photoSizes];
     let photoItem = null;
     let setCommentCounter = 0;
+
     photoSizes.forEach((item, i) => {
       photoItem = this.props.comments.find(comment => comment.id === item.id);
       if(photoItem !== undefined){
@@ -49,30 +31,29 @@ class Gallery extends React.Component {
         setCommentCounter++;
       }
     });
+
     this.setState({
         photoSizes: photoWithComments
     });
   }
 
-  photoClickHandler = (event, index) => {
+  photoClickHandler = (event, id) => {
+    this.setState({ showModal: true });
 
-    let swiperParams = {...this.state.swiperParams};
-    swiperParams.initialSlide = index;
+    if (this.state.swiperInstance) {
+      const index = photoSizes.findIndex((item) => item.id === id);
 
-    this.setState({
-      showModal: true,
-      swiperParams: swiperParams
-    });
+      this.state.swiperInstance.slideTo(index);
+    }
   };
 
   closeModal = () => {
     this.setState({
-        showModal: false
+      showModal: false
     });
   };
 
   render() {
-
     let items = [];
 
     this.state.photoSizes.map((item, i) => {
@@ -90,7 +71,7 @@ class Gallery extends React.Component {
           <div
             className={classes.item}
             key={item.id}
-            onClick={(e) => this.photoClickHandler(e, item.index)}
+            onClick={(e) => this.photoClickHandler(e, item.id)}
             style={{
               background: `url('${item.small}') no-repeat center`,
               backgroundSize: 'cover'
@@ -123,25 +104,25 @@ class Gallery extends React.Component {
               </g>
             </svg>
           </div>
-          <Swiper {...this.state.swiperParams}>
+          <Swiper
+            modules={[ Navigation ]}
+            navigation
+            onSwiper={
+              (swiper) => {
+                this.setState({ swiperInstance: swiper });
+              }
+            }
+          >
             {
               photoSizes.map((item) => (
-                <div key={item.id}>
+                <SwiperSlide key={item.id}>
                   <img
                     alt={item.id}
-                    className={['swiper-item', 'swiper-lazy', classes.swiperItem].join(' ')}
-                    data-src={item.large}
+                    className={['swiper-item', classes.swiperItem].join(' ')}
+                    src={item.large}
+                    loading="lazy"
                   />
-                  <div className={['swiper-lazy-preloader', classes.swiperLazyPreloader].join(' ')}>
-                    <div className={classes.loader}>
-                      <div className={classes.ldsCss}>
-                        <div className={classes.ldsEclipse}>
-                          <div/>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                </SwiperSlide>
               ))
             }
           </Swiper>

@@ -569,7 +569,7 @@ class SummersidePage extends React.PureComponent {
               </p>
               <div className={classes.spoiler}>
                 <div
-                  className={[classes.spoilerTitle, classes.link].join(' ')}
+                  className={classes.link}
                   onClick={this.showGearHandler}
                 >
                   {this.state.showGear ? 'Скрыть' : 'Показать'} полный список вещей

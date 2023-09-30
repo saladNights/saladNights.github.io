@@ -1,6 +1,5 @@
 import React from 'react'
 import Layout from '../components/layouts/index/index'
-import { List } from 'semantic-ui-react'
 import * as classes from './index.module.scss'
 import * as commonClasses from '../styles/elements.module.scss'
 
